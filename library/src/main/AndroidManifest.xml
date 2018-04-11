@@ -1,0 +1,11 @@
+<manifest package="com.winwin.common.http"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <provider
+            android:name=".provider.RxHttpProvider"
+            android:authorities="${applicationId}.http_provider"
+            android:exported="false"
+            android:multiprocess="true"/>
+    </application>
+</manifest>
