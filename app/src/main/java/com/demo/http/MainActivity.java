@@ -19,6 +19,7 @@ import com.winwin.common.http.response.BaseObserver;
 import com.winwin.common.http.response.DownloadObserver;
 import com.winwin.common.http.response.ErrorMessage;
 import com.winwin.common.http.response.ProgressInfo;
+import com.winwin.common.rxcache.RxCache;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;
@@ -55,6 +56,9 @@ public class MainActivity extends HttpActivity {
         mProgressBar = (QMUIProgressBar) findViewById(R.id.progress_bar);
 
         Logger.d("on main create");
+
+        RxCache rxCache = new RxCache();
+        rxCache.create(CacheApi.class).getUser("123");
 
         create(ApiService.class)
                 .getString()
